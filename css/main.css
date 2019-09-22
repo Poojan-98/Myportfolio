@@ -3426,7 +3426,7 @@ body.mobile-nav-active #mobile-nav-toggle {
       width: auto;
   }
     .skill-card-item {
-      width: calc(100%/6);
+      width: calc(100%/5);
       padding: 0 0.75rem;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -3460,5 +3460,48 @@ body.mobile-nav-active #mobile-nav-toggle {
 .paragraph p{
   text-align: justify;
 }
+.skill-card-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  
+}
+@media screen and (max-width: 426px){
+.skill-card-row {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+.skill-card-item {
+  width: calc(100%/3);
+
+}
+}
+.skill-card {
+  position: relative;
+  overflow: hidden;
+  margin: 0.5rem 0 1rem 0;
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-clip: padding-box;
+  margin-bottom: 60px;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.color-white{
+  color:white;
+
+}
+/* .custome-grid-define{
+display:grid;
+grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+
+} */
 
 /*# sourceMappingURL=main.css.map */
