@@ -2589,7 +2589,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-align: center; }
   .contact-box h4 {
     font-size: 21px;
-    font-weight: 700;
+    font-weight:normal;
     color: #fff; }
 
 .whole-wrap {
@@ -3438,6 +3438,7 @@ body.mobile-nav-active #mobile-nav-toggle {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
+      
   }
   .card-content {
     padding: 20px;
@@ -3452,7 +3453,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin: 1.14rem 0 0.912rem 0;
   margin-bottom: 30px;
   padding-bottom: 20px;
-  font-size: 2.28rem;
+  font-size: 1.5rem;
   line-height: 2.508rem;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -3478,6 +3479,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 .skill-card-item {
   width: calc(100%/3);
+  padding: 1rem 0.75rem;
 
 }
 }
@@ -3497,6 +3499,50 @@ body.mobile-nav-active #mobile-nav-toggle {
 .color-white{
   color:white;
 
+}
+/* preloader text animation */
+.loading {
+  text-transform: uppercase;
+  font-family: 'Lexend Deca', sans-serif;
+  display: block;
+}
+
+.wave {
+  background-image: url("https://webdevtrick.com/wp-content/uploads/water-wave-blue.png");
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: rgba(0,0,0,.3);
+  text-shadow: 0px 0px rgba(255, 255, 255, 0.06);
+  animation: wave-animation 1s infinite linear, loading-animation 10s infinite linear alternate;
+  background-size: 200px 100px;
+  background-repeat: repeat-x;
+  opacity: 1;
+}
+
+ 
+@keyframes wave-animation {
+  0% {
+    background-position: 0 bottom;
+    
+  }
+  100% {
+    background-position: 200px bottom;
+  }
+}
+@keyframes loading-animation {
+  0% {
+    background-size: 200px 0px;
+  }
+  100% {
+    background-size: 200px 200px;
+  }
+}
+@media (max-width: 765px) {
+  .loading, .loading2 {
+    font-size: 50pt;
+  }
 }
 /* .custome-grid-define{
 display:grid;
