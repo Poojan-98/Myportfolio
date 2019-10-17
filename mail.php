@@ -1,36 +1,32 @@
 <?php
+    $to = 'chapagain.pujan@gmail.com';
+    $firstname = $_POST["name"];
+    $email= $_POST["email"];
+    $text= $_POST["message"];
+     $subject= $_POST["subject"];
+   
+    
 
-require 'phpmailer/PHPMailerAutoload.php';
-$result="";
-var_dump($_POST);
-	if(isset($_POST['submit'])){
-        try{
-            $mail = new PHPMailer;
-            $mail->Host='smtp.gmail.com';
-            $mail->Port=587;
-            $mail->SMTPAuth=true;
-            $mail->SMTPSecure='tls';
-            $mail->Username='chapagain.pujan@gmail.com';
-            $mail->Password='fikkal2052';
-            var_dump($mail);
-            $mail->setFrom($_POST['email'],$_POST['name']);
-            $mail->addAddress('chapagain.pujan@gmail.com');
-            $mail->addReplyTo($_POST['email'],$_POST['name']);
-            $mail->isHTML(true);
-            $mail->Subject='Form Submission:'.$_POST['subject'];
-            $mail->Body ='<h1 align=center>Name:'.$_POST['name'].'<br>Email: '.$_POST['email'].'<br>Message: '.$_POST['message'].'</h1>';
-            if(!$mail->send()){
-                $result="Something went wrong";
-            }
-            else{
-                $result="Thanks ".$_POST['name']." For Contacting me. I'll get back to you soon!";
-            }
-        }
-        catch(Exception $e){
-            var_dump($e);
-        }
-		
-	}else{
-        echo "failed";    
+
+    $headers = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= "From: " . $email . "\r\n"; // Sender's E-mail
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+    $message ='<table style="width:100%">
+        <tr>
+            <td>'.$firstname.'</td>
+        </tr>
+        <tr><td>Email: '.$email.'</td></tr>
+        <tr><td>phone: '.$subject.'</td></tr>
+        <tr><td>Text: '.$text.'</td></tr>
+        
+    </table>';
+
+    if (@mail($to, $email, $message, $headers))
+    {
+        echo 'The message has been sent.';
+    }else{
+        echo 'failed';
     }
+
 ?>
